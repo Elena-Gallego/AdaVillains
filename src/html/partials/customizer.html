@@ -2,8 +2,13 @@
   <div class="customizer__wrapper">
     <form class="form">
       <fieldset class="form__design">
-        <i class="“far" fa-object-ungroup”></i>
-        <h2 class="h2">Diseña</h2>
+        <div class="form__title">
+          <h2 class="h2">
+            <i class="far fa-object-ungroup"></i>
+            Diseña
+          </h2>
+          <i class="fas fa-chevron-up"></i>
+        </div>
         <div>
           <legend>Colores</legend>
           <label class="palette-1" for="palette-1">
@@ -43,8 +48,13 @@
       </fieldset>
 
       <fieldset class="form__fill">
-        <i class="“far" fa-keyboard”></i>
-        <h2 class="h2">Rellena</h2>
+       <div class="form__title">
+        <h2 class="h2">
+          <i class="far fa-keyboard"></i>
+          Rellena
+        </h2>
+        <i class="fas fa-chevron-up"></i>
+       </div>
         <div>
           <label for="name">Nombre completo</label>
           <input
@@ -63,16 +73,18 @@
           />
 
           <label for="profile-image">Imagen de perfil</label>
-          <button class="button__image">
-            <a href="#">
-              Añadir imagen
-            </a>
-          </button>
-          <div></div>
+          <div class="button__container">
+            <button class="button__image">
+              <a href="#">
+                Añadir imagen
+              </a>
+            </button>
+            <div class="image__box"></div>
+          </div>
 
           <label for="email">Email</label>
           <input
-            placeholder=": Ej: sally-hill@gmail.com"
+            placeholder="Ej: sally-hill@gmail.com"
             id="email"
             type="email"
             name="email"
@@ -80,7 +92,7 @@
 
           <label for="telephone">Teléfono</label>
           <input
-            placeholder=": Ej: 555-55-55-55"
+            placeholder="Ej: 555-55-55-55"
             id="telephone"
             type="number"
             name="telephone"
@@ -88,7 +100,7 @@
 
           <label for="linkedin">Linkedin</label>
           <input
-            placeholder=": Ej: linkedin.com/in/sally.hill"
+            placeholder="Ej: linkedin.com/in/sally.hill"
             id="linkedin"
             type="text"
             name="linkedin"
@@ -96,7 +108,7 @@
 
           <label for="github">Github</label>
           <input
-            placeholder=": Ej: @sally-hill"
+            placeholder="Ej: @sally-hill"
             id="github"
             type="text"
             name="github"
@@ -105,12 +117,17 @@
       </fieldset>
 
       <div class="form__share">
-        <i class="“fas" fa-share-alt”></i>
-        <h2 class="h2">Comparte</h2>
+        <div class="form__title">
+          <h2 class="h2">
+            <i class="fas fa-share-alt"></i>
+            Comparte
+          </h2>
+          <i class="fas fa-chevron-up"></i>
+        </div>
         <div>
           <button class="button__share">
+            <i class="far fa-address-card"></i>
             <a href="#">
-              <i class="“far" fa-address-card”></i>
               Crear tarjeta
             </a>
           </button>
