@@ -6,6 +6,10 @@
   width: 100%;
   height: auto;
   background-image: linear-gradient($pale-grey1, $pale-grey);
+
+  @media all and (min-width: 768px) {
+  }
+
   &__wrapper {
     width: 240px;
   }
