@@ -1,0 +1,74 @@
+.preview {
+  display: flex;
+  align-items: column;
+  justify-content: center;
+  width: 100%;
+  height: calc(100vh - 111px);
+  background-image: linear-gradient($pale-grey1, $pale-grey);
+  &__wrapper {
+    width: 240px;
+  }
+}
+
+.button-reset {
+  border: solid 1px $color-light;
+  color: $color-dark;
+  font-family: $primary-font;
+  width: 75px;
+  height: 30px;
+  border-radius: 15px;
+  font-size: 0.75rem;
+  line-height: 30px;
+  text-transform: uppercase;
+  background: none;
+  margin-bottom: 20px;
+}
+
+.card {
+  background-color: $color-light;
+  width: 100%;
+  height: 329px;
+  padding: 21px 0 12px 0;
+
+  &__id {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-left: solid 5px $color-primary;
+    height: 42px;
+    padding: 0px 20px;
+    margin-bottom: 10px;
+  }
+  & h3 {
+    color: $color-primary;
+    font-size: 1.125rem;
+  }
+
+  &__photo {
+    width: 100%;
+    height: 200px;
+    background-image: url(https://via.placeholder.com/240x200.png?C/Ohttps://placeholder.com/#How_To_Set_Image_Size);
+    background-size: cover;
+    background-position: center;
+  }
+  &__contacts ul {
+    display: flex;
+    padding: 10px 20px;
+  }
+}
+
+a {
+  text-decoration: none;
+}
+
+.contact__icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: solid 2px $hospital-green;
+  color: $color-primary;
+  width: 32px;
+  height: 32px;
+  margin-right: 10px;
+  border-radius: 50%;
+}

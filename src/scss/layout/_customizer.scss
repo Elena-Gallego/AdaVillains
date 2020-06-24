@@ -1,0 +1,122 @@
+.customizer {
+  &__wrapper {
+    display: flex;
+    width: 100%;
+    padding: 20px;
+  }
+}
+
+.form {
+  .h2 {
+    font-size: 18px;
+    font-family: $primary-font;
+    font-weight: 600;
+    color: $color-dark;
+    text-transform: uppercase;
+  }
+
+  &__design {
+    legend {
+      font-size: 14px;
+      font-family: $primary-font;
+      color: $color-dark;
+      text-transform: uppercase;
+    }
+
+    .palette-1 {
+      input {
+        width: 17px;
+        height: 17px;
+        padding-right: 10px;
+      }
+      .color-cold-1 {
+        @include color-container-mobile;
+        background-color: $color-primary;
+      }
+      .color-cold-2 {
+        @include color-container-mobile;
+        background-color: $color-secondary;
+      }
+      .color-cold-3 {
+        @include color-container-mobile;
+        background-color: $hospital-green;
+      }
+    }
+    .palette-2 {
+      input {
+        width: 17px;
+        height: 17px;
+        padding-right: 10px;
+      }
+      .color-warm-1 {
+        @include color-container-mobile;
+        background-color: $dried-blood;
+      }
+      .color-warm-2 {
+        @include color-container-mobile;
+        background-color: $rusty-red;
+      }
+      .color-warm-3 {
+        @include color-container-mobile;
+        background-color: $tomato;
+      }
+    }
+    .palette-3 {
+      input {
+        width: 17px;
+        height: 17px;
+        padding-right: 10px;
+      }
+      .color-neutral-1 {
+        @include color-container-mobile;
+        background-color: $slate;
+      }
+      .color-neutral-2 {
+        @include color-container-mobile;
+        background-color: $faded-orange;
+      }
+      .color-neutral-3 {
+        @include color-container-mobile;
+        background-color: $light-grey-blue;
+      }
+    }
+  }
+
+  &__fill {
+    label {
+      font-size: 14px;
+      font-family: $primary-font;
+      color: $color-primary;
+    }
+    input {
+      border: solid 1px $hospital-green;
+      width: 100%;
+      font-size: 14px;
+      font-family: $primary-font;
+      color: $pinkish-grey;
+    }
+    .button__image {
+      width: 140px;
+      height: 30px;
+      background-color: $color-tertiary;
+      border-radius: 3px;
+      font-size: 14px;
+      font-family: $primary-font;
+      color: $color-light;
+      text-align: center;
+    }
+  }
+  &__share {
+    .button__share {
+      width: 199px;
+      height: 50px;
+      background-color: $color-tertiary;
+      border-radius: 12px;
+      font-size: 14px;
+      font-family: $primary-font;
+      color: $color-light;
+      text-transform: uppercase;
+      text-align: center;
+    }
+  }
+}

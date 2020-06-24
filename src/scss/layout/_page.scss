@@ -1,7 +1,15 @@
 body {
-  padding: 2rem;
   height: 100vh;
-  background: url("../images/logo-adalab.png") center center no-repeat
-    $color-white;
-  font-family: $font-main;
+  background-color: $unknown-color;
+}
+.wrapper {
+  padding-left: 26px;
+  padding-right: 26px;
+}
+.header,
+.customizer,
+.footer,
+.preview,
+.main {
+  border: 1px solid purple;
 }

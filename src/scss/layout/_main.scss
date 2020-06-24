@@ -1,0 +1,89 @@
+a {
+    text-decoration: none;
+}
+
+.main {
+    // background-color: $unknown-color;
+    text-align: center;
+    & .wrapper {
+        padding-top: 35.4px; 
+        padding-bottom: 30px;
+        @media all and (min-width: 768px) {
+            padding-top: 31px; 
+            padding-bottom: 59px;
+            padding-left: 175px;
+            padding-right: 175px;
+            // añadir padding left y right en la rama main del wrapper y quitar de aquí
+        }
+        & h1 {
+            color: $color-tertiary;
+            font-family: $landing-font;
+            font-size: 19.2px;
+            font-weight: 900;
+            line-height: 24px;
+            @media all and (min-width: 768px) {
+                font-size: 24px;  
+            }
+        }
+        & p {
+            color: $color-primary;
+            font-family: $primary-font;
+            font-size: 12.8px;
+            margin-bottom: 17.8px;
+            @media all and (min-width: 768px) {
+                font-size: 16px;  
+                margin-bottom: 27px;
+            }
+        }
+        & .options {
+            padding: 15px 20px 10px;
+            margin-bottom: 38.6px;
+            margin-right: 0;
+            
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+    
+            border: 1.6px solid transparentize($color-tertiary, 0.79);
+            border-radius: 4px;
+            height: 73.8px;
+            @media all and (min-width: 768px) {
+                width: 325px;
+                margin: auto;
+                margin-bottom: 186px;
+            }
+            & article {
+                color: $color-tertiary;
+                font-size: 22.4px;
+                & p {
+                    color: $color-dark;
+                    margin-bottom: 7.8px;
+                }
+            }
+        }
+
+        & .button__start {
+            width: 129px;
+            height: 42px;
+            padding: 10px 20px;
+            margin: auto;
+            margin-bottom: 30px;
+
+            border-radius: 21px;
+            background-color: $color-secondary;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            &--text {
+                text-transform: uppercase;
+                color: $color-light;
+                font-family: $primary-font;
+                font-size: 16px;
+                font-weight: 600;
+                margin: 0;
+            }
+        }
+    }
+}

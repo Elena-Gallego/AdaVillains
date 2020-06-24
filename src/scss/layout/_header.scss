@@ -1,5 +1,47 @@
-.page__header {
-  display: flex;
-  justify-content: space-evenly;
-  margin-bottom: 3rem;
+.header {
+  .wrapper {
+    margin: auto;
+    padding-top: 95px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    width: 100%;
+  }
+
+  &__photo {
+    width: 100%;
+  }
+
+  @media all and (min-width: 768px) {
+    height: 455px;
+    padding-left: 175px;
+    &__photo {
+      height: 105px;
+      width: 419px;
+    }
+  }
 }
+
+// HEADER DESIGN
+
+// .header__design {
+//   width: 100vw;
+//   height: 111px;
+//   display: flex;
+//   align-items: center;
+//   padding-left: 40px;
+//   background-color: $color-light;
+//   &__photo {
+//     height: 50px;
+//     width: 201px;
+//   }
+//   @media all and (min-width: 768px) {
+//     height: 455px;
+//     padding-left: 175px;
+//     background-color: $unknown-color;
+//     &__photo {
+//       height: 105px;
+//       width: 419px;
+//     }
+//   }
+// }

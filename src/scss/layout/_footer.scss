@@ -1,8 +1,39 @@
-.page__footer {
-  position: fixed;
-  left: 0;
-  bottom: 0;
+.footer {
   width: 100vw;
-  padding: 1rem;
-  color: $color-secondary;
+  border-top: 1px $white-two solid;
+  font-family: $primary-font;
+  padding: 18px;
+
+  @media all and (min-width: 768px) {
+    padding: 10px;
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: $white-two;
+    width: 100%;
+
+    @media all and (min-width: 768px) {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    .copyright {
+      font-size: 14px;
+      text-align: center;
+      line-height: 20px;
+    }
+
+    .logo-adalab {
+      width: 103px;
+      height: 40px;
+      padding-bottom: 2px;
+      margin-top: 12px;
+    }
+  }
 }
