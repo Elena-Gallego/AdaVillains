@@ -1,8 +1,9 @@
 "use strict";
 //Listeners Customizer
 
-const inputElement = document.querySelector();
+const nameElement = document.querySelector(".js-input-name");
 function writeCard() {
-  console.log("Holis");
+  const name = document.querySelector(".js-card-name");
+  name.innerHTML = nameElement.value;
 }
-inputElement.addEventListener("keyup", writeCard);
+nameElement.addEventListener("keyup", writeCard);
