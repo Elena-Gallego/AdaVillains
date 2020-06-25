@@ -1,3 +1,8 @@
-'use strict';
+"use strict";
+//Listeners Customizer
 
-console.log('>> Ready :)');
+const inputElement = document.querySelector();
+function writeCard() {
+  console.log("Holis");
+}
+inputElement.addEventListener("keyup", writeCard);
