@@ -1,6 +1,7 @@
 .preview {
   display: flex;
-  align-items: column;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
   padding-bottom: 40px;
   width: 100%;
@@ -8,6 +9,8 @@
   background-image: linear-gradient($pale-grey1, $pale-grey);
 
   @media all and (min-width: 768px) {
+    border-radius: 6px;
+    align-items: center;
   }
 
   &__wrapper {
