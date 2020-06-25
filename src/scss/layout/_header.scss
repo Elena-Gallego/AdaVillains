@@ -1,7 +1,7 @@
 .header {
   .wrapper {
-    margin: auto;
     padding-top: 95px;
+    padding-left: 0;
     display: flex;
     align-items: flex-end;
     justify-content: center;
@@ -15,6 +15,10 @@
   @media all and (min-width: 768px) {
     height: 455px;
     padding-left: 175px;
+    padding-right: 175px;
+    display: flex;
+    align-items: flex-end;
+    text-align: center;
     &__photo {
       height: 105px;
       width: 419px;
