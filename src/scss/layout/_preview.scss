@@ -66,6 +66,10 @@
     background-size: cover;
     background-position: center;
   }
+  & .hidden {
+    display: none;
+  }
+
   &__contacts ul {
     display: flex;
     padding: 10px 20px;
