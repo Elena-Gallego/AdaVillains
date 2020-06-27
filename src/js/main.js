@@ -18,7 +18,7 @@ const github = document.querySelector(".js-card-github");
 
 // recogemos datos de los inputs
 const userData = {};
-function recogerValorInput() {
+function getInputValues() {
   userData.name = nameElement.value;
   userData.position = positionElement.value;
   userData.email = emailElement.value;
@@ -28,18 +28,18 @@ function recogerValorInput() {
 }
 
 // Elemento de donde pintamos los datos
-function updateCard() {
-  name.innerHTML = nameElement.value;
-  position.innerHTML = positionElement.value;
-  email.innerHTML = emailElement.value;
-  telephone.innerHTML = telephoneElement.value;
-  linkedin.innerHTML = linkedinElement.value;
-  github.innerHTML = githubElement.value;
+function updateCard(obj) {
+  name.innerHTML = obj.name;
+  position.innerHTML = obj.position;
+  email.innerHTML = obj.email;
+  telephone.innerHTML = obj.telephone;
+  linkedin.innerHTML = obj.Linkedin;
+  github.innerHTML = obj.github;
 }
 
 function result() {
-  recogerValorInput();
-  updateCard();
+  getInputValues();
+  updateCard(userData);
 }
 
 // Pintamos (cogemos los datos del input)
@@ -47,12 +47,12 @@ function result() {
 //   name.innerHTML = userData(name)
 // }
 
-nameElement.addEventListener("keyup", updateCard);
-positionElement.addEventListener("keyup", updateCard);
-emailElement.addEventListener("keyup", updateCard);
-telephoneElement.addEventListener("keyup", updateCard);
-linkedinElement.addEventListener("keyup", updateCard);
-githubElement.addEventListener("keyup", updateCard);
+nameElement.addEventListener("keyup", result);
+positionElement.addEventListener("keyup", result);
+emailElement.addEventListener("keyup", result);
+telephoneElement.addEventListener("keyup", result);
+linkedinElement.addEventListener("keyup", result);
+githubElement.addEventListener("keyup", result);
 
 //Listeners Customizer
 // const nameElement = document.querySelector('.js-input-name');
