@@ -60,5 +60,66 @@ function showContactTelephone() {
     iconTelephone.classList.add('hidden');
   }
 }
-
 telephoneElement.addEventListener('keyup', showContactTelephone);
+
+function showContactEmail() {
+  if (emailElement.value.length !== 0) {
+    iconEmail.classList.remove('hidden');
+  } else {
+    iconEmail.classList.add('hidden');
+  }
+}
+emailElement.addEventListener('keyup', showContactEmail);
+
+function showContactLinkedin() {
+  if (linkedinElement.value.length !== 0) {
+    iconLinkedin.classList.remove('hidden');
+  } else {
+    iconLinkedin.classList.add('hidden');
+  }
+}
+linkedinElement.addEventListener('keyup', showContactLinkedin);
+
+function showContactGithub() {
+  if (githubElement.value.length !== 0) {
+    iconGithub.classList.remove('hidden');
+  } else {
+    iconGithub.classList.add('hidden');
+  }
+}
+githubElement.addEventListener('keyup', showContactGithub);
+
+
+/*
+//Borrador de función de la hoja de papel de Cris
+
+function addEmail () {
+  if (emailElement.value.length !== 0) { emailValidation();
+    if (emailValidation() === true) {
+      iconEmail.classList.remove('hidden');
+      href del iconEmail ?? = 'mailto: ${emailElement.value}';
+    }
+    else {
+      dondesea.innerHTML ?? = 'Mensaje de error';
+    }
+  }
+  else {
+    iconEmail.classList.add('hidden');
+  }
+}
+
+emailValidation() {
+  if (!(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(emailElement.value))) {
+    return false;
+  }
+  else {
+    return true;
+  }
+}
+
+emailElement.addEventListener('keyup', addEmail);
+
+//name and position validation (!(/^[\w'\-,.][^0-9_!¡?÷?¿/\\+=@#$%ˆ&*(){}|~<>;:[\]]{2,}$/.test(nameElement.value)))
+//phone validation (!(/^[0-9]{9}/.test(telephoneElement.value)))
+//linkedin and github validation idk
+*/
