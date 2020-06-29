@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Merriweather:900|Montserrat:400,700|Open+Sans:400,600&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.13.1/css/all.css"
+      integrity="sha384-xxzQGERXS00kBmZW/6qxqJPyxW3UR0BPsL4c8ILaIWXva5kFi7TxkIIaMiKtqV1Q"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./assets/css/main.css" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <header class="header">
+      <div class="wrapper">
+        <img class="header__photo" src="./assets/images/tarjetas-molonas.png" />
+      </div>
+    </header>
+
+    <div class="design__container">
+      <section class="preview">
+        <div class="preview__wrapper">
+          <button id="button-reset" class="button-reset">
+            <i class="far fa-trash-alt" aria-hidden="true"></i> reset
+          </button>
+          <div class="card">
+            <div class="card__id">
+              <h3 class="card__id_name js-card-name">Nombre Apellido</h3>
+              <p class="card__id_role js-card-job">Puesto de trabajo</p>
+            </div>
+            <div class="card__photo js-card-photo"></div>
+            <div class="card__contacts">
+              <ul>
+                <a href="">
+                  <li class="contact__icon js-telephone hidden">
+                    <i
+                      class="fas fa-mobile-alt js-icon-telephone"
+                      aria-hidden="true"
+                    ></i></li
+                ></a>
+                <a href="">
+                  <li class="contact__icon js-email hidden">
+                    <i class="far fa-envelope js-icon-email" aria-hidden="true"></i>
+                  </li>
+                </a>
+                <a href="">
+                  <li class="contact__icon js-linkedin hidden">
+                    <i
+                      class="fab fa-linkedin-in js-icon-linkedin"
+                      aria-hidden="true"
+                    ></i></li
+                ></a>
+                <a href="">
+                  <li class="contact__icon js-github hidden">
+                    <i
+                      class="fab fa-github-alt js-icon-github"
+                      aria-hidden="true"
+                    ></i>
+                  </li>
+                </a>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="customizer">
+        <div class="customizer__wrapper">
+          <form class="form">
+            <fieldset class="form__design">
+              <div class="form__title">
+                <h2 class="h2">
+                  <i class="far fa-object-ungroup"></i>
+                  Diseña
+                </h2>
+                <i class="fas fa-chevron-up"></i>
+              </div>
+              <div>
+                <legend>Colores</legend>
+                <label class="palette-1" for="palette-1">
+                  <input
+                    id="palette-1"
+                    type="radio"
+                    value="coldcolors"
+                    name="color-palettes"
+                  />
+                  <div class="color-cold-1"></div>
+                  <div class="color-cold-2"></div>
+                  <div class="color-cold-3"></div>
+                </label>
+                <label class="palette-2" for="palette-2">
+                  <input
+                    id="palette-2"
+                    type="radio"
+                    value="warmcolors"
+                    name="color-palettes"
+                  />
+                  <div class="color-warm-1"></div>
+                  <div class="color-warm-2"></div>
+                  <div class="color-warm-3"></div>
+                </label>
+                <label class="palette-3" for="palette-3">
+                  <input
+                    id="palette-3"
+                    type="radio"
+                    value="neutralcolors"
+                    name="color-palettes"
+                  />
+                  <div class="color-neutral-1"></div>
+                  <div class="color-neutral-2"></div>
+                  <div class="color-neutral-3"></div>
+                </label>
+              </div>
+            </fieldset>
+
+            <fieldset class="form__fill">
+              <div class="form__title">
+                <h2 class="h2">
+                  <i class="far fa-keyboard"></i>
+                  Rellena
+                </h2>
+                <i class="fas fa-chevron-up"></i>
+              </div>
+              <div>
+                <label for="name">Nombre completo</label>
+                <input
+                  class="js-input-name"
+                  placeholder="Ej: Sally Jill"
+                  id="name"
+                  type="text"
+                  name="name"
+                />
+
+                <label for="job">Puesto</label>
+                <input
+                  class="js-input-job"
+                  placeholder="Ej: Font-end unicorn"
+                  id="job"
+                  type="text"
+                  name="job"
+                />
+
+                <label for="profile-image">Imagen de perfil</label>
+                <div class="button__container">
+                  <button class="button__image">
+                    <a href="#">
+                      Añadir imagen
+                    </a>
+                  </button>
+                  <div class="image__box"></div>
+                </div>
+
+                <label for="email">Email</label>
+                <input
+                  class="js-input-email"
+                  placeholder="Ej: sally-hill@gmail.com"
+                  id="email"
+                  type="email"
+                  name="email"
+                />
+
+                <label for="telephone">Teléfono</label>
+                <input
+                  class="js-input-telephone"
+                  placeholder="Ej: 555-55-55-55"
+                  id="telephone"
+                  type="number"
+                  name="telephone"
+                />
+
+                <label for="linkedin">Linkedin</label>
+                <input
+                  class="js-input-linkedin"
+                  placeholder="Ej: linkedin.com/in/sally.hill"
+                  id="linkedin"
+                  type="text"
+                  name="linkedin"
+                />
+
+                <label for="github">Github</label>
+                <input
+                  class="js-input-github"
+                  placeholder="Ej: @sally-hill"
+                  id="github"
+                  type="text"
+                  name="github"
+                />
+              </div>
+            </fieldset>
+
+            <div class="form__share">
+              <div class="form__title">
+                <h2 class="h2">
+                  <i class="fas fa-share-alt"></i>
+                  Comparte
+                </h2>
+                <i class="fas fa-chevron-up"></i>
+              </div>
+              <div>
+                <button class="button__share">
+                  <i class="far fa-address-card"></i>
+                  <a href="#">
+                    Crear tarjeta
+                  </a>
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </section>
+
+    </div>
+    <footer class="footer">
+      <div class="wrapper">
+        <span class="copyright">Awesome profile-cards @2018</span>
+        <img
+          class="logo-adalab"
+          src="././assets/images/logo-adalab.png"
+          rel="logo-adalab"
+        />
+      </div>
+    </footer>
+
+    <script type="text/javascript" src="./assets/js/main.js"></script>
+  </body>
+</html>
