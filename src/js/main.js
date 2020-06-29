@@ -2,7 +2,7 @@
 
 // Elemento de donde cogemos los datos
 const nameElement = document.querySelector('.js-input-name');
-const positionElement = document.querySelector('.js-input-position');
+const positionElement = document.querySelector('.js-input-job');
 const emailElement = document.querySelector('.js-input-email');
 const telephoneElement = document.querySelector('.js-input-telephone');
 const linkedinElement = document.querySelector('.js-input-linkedin');
@@ -10,7 +10,7 @@ const githubElement = document.querySelector('.js-input-github');
 
 // Elemento donde pintamos los datos
 const name = document.querySelector('.js-card-name');
-const position = document.querySelector('.js-card-position');
+const job = document.querySelector('.js-card-job');
 /*const email = document.querySelector('.js-icon-email');
 const telephone = document.querySelector('.js-icon-telephone');
 const linkedin = document.querySelector('.js-icon-linkedin');
@@ -20,7 +20,7 @@ const github = document.querySelector('.js-icon-github');*/
 const userData = {};
 function getInputValues() {
   userData.name = nameElement.value;
-  userData.position = positionElement.value;
+  userData.job = positionElement.value;
   userData.email = emailElement.value;
   userData.telephone = telephoneElement.value;
   userData.linkedin = linkedinElement.value;
@@ -29,8 +29,8 @@ function getInputValues() {
 
 // Elemento de donde pintamos los datos
 function updateCard(obj) {
-  name.innerHTML = obj.name;
-  position.innerHTML = obj.position;
+  name.innerHTML = obj.name || 'Nombre Apellido';
+  job.innerHTML = obj.job || 'Puesto de trabajo';
 }
 
 function result() {
@@ -52,6 +52,7 @@ const iconTelephone = document.querySelector('.js-telephone');
 const iconEmail = document.querySelector('.js-email');
 const iconLinkedin = document.querySelector('.js-linkedin');
 const iconGithub = document.querySelector('.js-github');
+
 
 function showContactTelephone() {
   if (telephoneElement.value.length !== 0) {
@@ -90,11 +91,11 @@ function showContactGithub() {
 githubElement.addEventListener('keyup', showContactGithub);
 
 
+
 /*
-//Borrador de función de la hoja de papel de Cris
 
 function addEmail () {
-  if (emailElement.value.length !== 0) { emailValidation();
+  if (emailElement.value.length !== 0) { emailValidation(emailElement.value);
     if (emailValidation() === true) {
       iconEmail.classList.remove('hidden');
       href del iconEmail ?? = 'mailto: ${emailElement.value}';
@@ -108,8 +109,8 @@ function addEmail () {
   }
 }
 
-emailValidation() {
-  if (!(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(emailElement.value))) {
+function emailValidation(emailValue) {
+  if (!(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(emailValue))) {
     return false;
   }
   else {
@@ -119,7 +120,8 @@ emailValidation() {
 
 emailElement.addEventListener('keyup', addEmail);
 
-//name and position validation (!(/^[\w'\-,.][^0-9_!¡?÷?¿/\\+=@#$%ˆ&*(){}|~<>;:[\]]{2,}$/.test(nameElement.value)))
+//name and job validation (!(/^[\w'\-,.][^0-9_!¡?÷?¿/\\+=@#$%ˆ&*(){}|~<>;:[\]]{2,}$/.test(nameElement.value)))
 //phone validation (!(/^[0-9]{9}/.test(telephoneElement.value)))
 //linkedin and github validation idk
+
 */
