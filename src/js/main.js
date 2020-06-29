@@ -11,10 +11,10 @@ const githubElement = document.querySelector('.js-input-github');
 // Elemento donde pintamos los datos
 const name = document.querySelector('.js-card-name');
 const job = document.querySelector('.js-card-job');
-/*const email = document.querySelector('.js-icon-email');
-const telephone = document.querySelector('.js-icon-telephone');
+const email = document.querySelector('.js-icon-email');
+// const telephone = document.querySelector('.js-icon-telephone');
 const linkedin = document.querySelector('.js-icon-linkedin');
-const github = document.querySelector('.js-icon-github');*/
+const github = document.querySelector('.js-icon-github');
 
 // recogemos datos de los inputs
 const userData = {};
@@ -31,7 +31,11 @@ function getInputValues() {
 function updateCard(obj) {
   name.innerHTML = obj.name || 'Nombre Apellido';
   job.innerHTML = obj.job || 'Puesto de trabajo';
+  email.setAttribute('href', 'mailto:' + obj.email);
+  linkedin.setAttribute('href', obj.linkedin);
+  github.setAttribute('href', 'https://github.com/', obj.github);
 }
+console.log(email);
 
 function result() {
   getInputValues();
