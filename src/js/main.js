@@ -93,7 +93,6 @@ githubElement.addEventListener('keyup', showContactGithub);
 
 
 /*
-
 function addEmail () {
   if (emailElement.value.length !== 0) { emailValidation(emailElement.value);
     if (emailValidation() === true) {
@@ -120,8 +119,8 @@ function emailValidation(emailValue) {
 
 emailElement.addEventListener('keyup', addEmail);
 
+
+
 //name and job validation (!(/^[\w'\-,.][^0-9_!¡?÷?¿/\\+=@#$%ˆ&*(){}|~<>;:[\]]{2,}$/.test(nameElement.value)))
 //phone validation (!(/^[0-9]{9}/.test(telephoneElement.value)))
-//linkedin and github validation idk
-
-*/
+//inkedin and github validation idk*/
