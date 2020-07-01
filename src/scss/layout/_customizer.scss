@@ -6,6 +6,54 @@
   }
 }
 
+// Botón imagen
+.action {
+  text-align: center;
+  margin: 0;
+}
+.action__upload-btn {
+  display:flex;
+  width: 140px;
+  height: 30px;
+  background-color: $color-tertiary;
+  border-radius: 3px;
+  font-size: 14px;
+  font-family: $primary-font;
+  color: $color-light;
+  border: none;
+  align-items: center;
+  justify-content: center;
+}
+.action__hiddenField {
+  /* Ocultamos el input de tipo "file" porque no podemos 
+  darle los estilos que queremos */
+  display: none;
+}
+
+.profile {
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+.profile__image,
+.profile__preview {
+  width: 30px;
+  height: 30px;
+  margin-left: 20px;
+ 
+}
+.profile__image {
+  width: 300px;
+  height: 300px;
+}
+
+.profile__preview {
+  width: 50px;
+  height: 50px;
+  margin-left: 15px;
+}
+
+// Formulario
 .form {
   .form__title {
     display: flex;
