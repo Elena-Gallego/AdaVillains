@@ -156,10 +156,9 @@ githubElement.addEventListener('keyup', showContactGithub);
 
 
 // Botón de reset
-
 const resetButton = document.querySelector('.js-button-reset');
 const photoPreviewElement = document.querySelector('.js__profile-preview');
-
+const contactList = document.querySelector('.js-contact__list');
 
 function resetForm() {
   nameElement.value = '';
@@ -171,8 +170,6 @@ function resetForm() {
   photoPreviewElement.style = '';
   photo.style = '';
 }
-
-const contactList = document.querySelector('.js-contact__list');
 
 function resetCard() {
   name.innerHTML = 'Nombre Apellido';
@@ -186,7 +183,6 @@ function resetData(){
 }
 
 resetButton.addEventListener('click', resetData);
-
 
 /*
 function addEmail () {
