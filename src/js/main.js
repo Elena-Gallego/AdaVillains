@@ -84,7 +84,7 @@ function getInputValues() {
   userData.telephone = telephoneElement.value;
   userData.linkedin = linkedinElement.value;
   userData.github = githubElement.value;
-  userData.photo = photo.src;
+  userData.photo = photo.style;
 }
 
 // Elemento de donde pintamos los datos
@@ -154,6 +154,38 @@ function showContactGithub() {
 }
 githubElement.addEventListener('keyup', showContactGithub);
 
+
+// Botón de reset
+
+const resetButton = document.querySelector('.js-button-reset');
+const photoPreviewElement = document.querySelector('.js__profile-preview');
+
+
+function resetForm() {
+  nameElement.value = '';
+  positionElement.value = '';
+  emailElement.value = '';
+  telephoneElement.value = '';
+  linkedinElement.value = '';
+  githubElement.value = '';
+  photoPreviewElement.style = '';
+  photo.style = '';
+}
+
+const contactList = document.querySelector('.js-contact__list');
+
+function resetCard() {
+  name.innerHTML = 'Nombre Apellido';
+  job.innerHTML = 'Puesto de trabajo';
+  contactList.classList.add('hidden');
+}
+
+function resetData(){
+  resetForm();
+  resetCard();
+}
+
+resetButton.addEventListener('click', resetData);
 
 
 /*
