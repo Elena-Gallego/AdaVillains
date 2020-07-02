@@ -4,7 +4,7 @@
 const fr = new FileReader();
 const uploadBtn = document.querySelector('.js__profile-trigger');
 const fileField = document.querySelector('.js__profile-upload-btn');
-const profileImage = document.querySelector('.js__profile-image');
+let profileImage = document.querySelector('.js__profile-image');
 const profilePreview = document.querySelector('.js__profile-preview');
 
 
@@ -63,6 +63,7 @@ const telephoneElement = document.querySelector('.js-input-telephone');
 const linkedinElement = document.querySelector('.js-input-linkedin');
 const githubElement = document.querySelector('.js-input-github');
 
+
 // Elemento donde pintamos los datos
 const name = document.querySelector('.js-card-name');
 const job = document.querySelector('.js-card-job');
@@ -70,7 +71,10 @@ const email = document.querySelector('.js-icon-email');
 // const telephone = document.querySelector('.js-icon-telephone');
 const linkedin = document.querySelector('.js-icon-linkedin');
 const github = document.querySelector('.js-icon-github');
+const photo = document.querySelector('.js__profile-image');
 
+
+// ---- OBJETO (REVISAR)
 // recogemos datos de los inputs
 const userData = {};
 function getInputValues() {
@@ -80,6 +84,7 @@ function getInputValues() {
   userData.telephone = telephoneElement.value;
   userData.linkedin = linkedinElement.value;
   userData.github = githubElement.value;
+  userData.photo = photo.src;
 }
 
 // Elemento de donde pintamos los datos
