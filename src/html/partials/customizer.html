@@ -2,14 +2,16 @@
   <div class="customizer__wrapper">
     <form class="form">
       <fieldset class="form__design">
-        <div class="form__title">
+        <div class="form__title js-close-design">
           <h2 class="h2">
             <i class="far fa-object-ungroup"></i>
             Diseña
           </h2>
-          <i class="fas fa-chevron-up"></i>
+          <button class="js-arrow-button" type="button">
+            <i class="fas fa-chevron-up js-arrow-direction"></i>
+          </button>
         </div>
-        <div>
+        <div class="js-color-palettes js-open-design">
           <legend>Colores</legend>
           <label class="palette-1" for="palette-1">
             <input
@@ -47,15 +49,17 @@
         </div>
       </fieldset>
 
-      <fieldset class="form__fill">
-        <div class="form__title">
+      <fieldset class="form__fill js-form-fill">
+        <div class="form__title js-close-fill">
           <h2 class="h2">
             <i class="far fa-keyboard"></i>
             Rellena
           </h2>
-          <i class="fas fa-chevron-up"></i>
+          <button class="js-arrow-button-2" type="button">
+            <i class="fas fa-chevron-up js-arrow-direction2"></i>
+          </button>
         </div>
-        <div>
+        <div class="js-open-fill">
           <label for="name">Nombre completo</label>
           <input
             class="js-input-name"
@@ -123,14 +127,16 @@
       </fieldset>
 
       <div class="form__share">
-        <div class="form__title">
+        <div class="form__title js-form-title-3 js-close-share">
           <h2 class="h2">
             <i class="fas fa-share-alt"></i>
             Comparte
           </h2>
-          <i class="fas fa-chevron-up"></i>
+          <button class="js-arrow-button-3" type="button">
+            <i class="fas fa-chevron-up js-arrow-direction3"></i>
+          </button>
         </div>
-        <div>
+        <div class="js-open-share">
           <button class="button__share">
             <i class="far fa-address-card"></i>
             <a href="#">

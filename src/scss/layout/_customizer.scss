@@ -42,7 +42,6 @@
       input {
         width: 17px;
         height: 17px;
-     
       }
       .color-cold-1 {
         @include color-container-mobile;
@@ -131,14 +130,14 @@
       font-family: $primary-font;
       line-height: 30px;
     }
-    input::placeholder { 
+    input::placeholder {
       color: $pinkish-grey;
       padding-left: 9px;
     }
     .button__container {
       display: flex;
       .button__image {
-        display:flex;
+        display: flex;
         width: 140px;
         height: 30px;
         background-color: $color-tertiary;
@@ -180,5 +179,22 @@
         padding-left: 9px;
       }
     }
+  }
+
+  .js-arrow-button {
+    border: inherit;
+    font-size: 18px;
+  }
+  .display-container {
+    max-height: 700px;
+  }
+  .arrow-rotation {
+    transform: rotate(180deg);
+    &:hover {
+      color: $color-tertiary;
+    }
+  }
+  .hidden {
+    display: none;
   }
 }

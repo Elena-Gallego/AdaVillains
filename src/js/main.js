@@ -1,5 +1,7 @@
 "use strict";
 
+//VALIDACIÓN DE INPUTS
+
 // Elemento de donde cogemos los datos
 const nameElement = document.querySelector(".js-input-name");
 const positionElement = document.querySelector(".js-input-position");
@@ -61,3 +63,39 @@ githubElement.addEventListener("keyup", result);
 //   name.innerHTML = nameElement.value;
 // }
 // nameElement.addEventListener('keyup', writeCard);
+
+//ACTIVAR LAS SECCIONES DEPLEGABLES MEDIANTE CLIC EN FLECHAS
+
+//container cerrar secciones
+const closeDesign = document.querySelector(".js-close-design");
+const closeFill = document.querySelector(".js-close-fill");
+const closeShare = document.querySelector(".js-close-share");
+//container abrir secciones
+const openDesign = document.querySelector(".js-open-design");
+const openFill = document.querySelector(".js-open-fill");
+const openShare = document.querySelector(".js-open-share");
+
+//botones de flechas
+const arrowButton = document.querySelector(".js-arrow-button");
+const arrowButton2 = document.querySelector(".js-arrow-button-2");
+const arrowButton3 = document.querySelector(".js-arrow-button-3");
+
+//inicio de secciones
+
+function displayDesign() {
+  openDesign.classList.toggle("hidden");
+  arrowButton.classList.toggle("arrow-rotation");
+}
+closeDesign.addEventListener("click", displayDesign);
+
+function displayFill() {
+  openFill.classList.toggle("hidden");
+  arrowButton2.classList.toggle("arrow-rotation");
+}
+closeFill.addEventListener("click", displayFill);
+
+function displayShare() {
+  openShare.classList.toggle("hidden");
+  arrowButton3.classList.toggle("arrow-rotation");
+}
+closeShare.addEventListener("click", displayShare);
