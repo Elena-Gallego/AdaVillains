@@ -54,6 +54,27 @@
   background-size: cover;
 }
 
+// Colapsables
+.js-collapsible__trigger {
+  cursor: pointer;
+  min-width: 320px;
+}
+
+.collapsible__content {
+  display: none;
+}
+
+// Colapsables abiertos
+.collapsable--open {
+
+  .collapsable--open, .collapsible__content {
+    display: block;
+  }
+
+  .fa-object-ungroup {
+    transform: rotate(-180deg);
+  }
+}
 // Formulario
 .form {
   .form__title {
@@ -160,7 +181,7 @@
   &__fill {
     border: none;
     border-bottom: 1px solid $white-two;
-    padding-bottom: 30px;
+    padding-bottom: 10px;
     h2 {
       padding-top: 10px;
       padding-bottom: 10px;
@@ -209,6 +230,8 @@
   }
   &__share {
     border-bottom: 1px solid $white-two;
+    padding: 5.6px 12px 10px;
+
     h2 {
       padding-top: 10px;
       padding-bottom: 10px;

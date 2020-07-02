@@ -154,6 +154,28 @@ function showContactGithub() {
 }
 githubElement.addEventListener('keyup', showContactGithub);
 
+// Colapsables
+
+
+const collapsibleTriggers = document.querySelectorAll('.js-collapsible__trigger');
+
+function updateCollapsible(event) {
+  const currentCollapsible = event.currentTarget.parentElement;
+
+  if (currentCollapsible.classList.contains('collapsable--open')) {
+    currentCollapsible.classList.remove('collapsable--open');
+  } else {
+    for (const item of collapsibleTriggers) {
+      item.parentElement.classList.remove('collapsable--open');
+    }
+    currentCollapsible.classList.add('collapsable--open');
+  } 
+}
+
+for (const item of collapsibleTriggers) {
+  item.addEventListener('click', updateCollapsible);
+}
+
 
 // Botón de reset
 const resetButton = document.querySelector('.js-button-reset');
