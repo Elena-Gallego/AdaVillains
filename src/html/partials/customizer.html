@@ -58,12 +58,14 @@
         <div>
           <label for="name">Nombre completo</label>
           <input
-            class="js-input-name"
+            class="js-input-name js-border-input"
             placeholder="Ej: Sally Jill"
             id="name"
             type="text"
             name="name"
+            required
           />
+          <small class="js-error-message">Completa campos obligatorios</small>
 
           <label for="job">Puesto</label>
           <input
@@ -72,15 +74,26 @@
             id="job"
             type="text"
             name="job"
+            requiered
           />
+          <small class="js-error-message">Completa campos obligatorios</small>
 
           <label for="profile-image">Imagen de perfil</label>
           <div class="action button__container">
-            <button class="action__upload-btn js__profile-trigger" type="button">Añadir imagen</button>
-            <input type="file" name="" id="img-selector" class="action__hiddenField js__profile-upload-btn">
+            <button
+              class="action__upload-btn js__profile-trigger"
+              type="button"
+            >
+              Añadir imagen
+            </button>
+            <input
+              type="file"
+              name=""
+              id="img-selector"
+              class="action__hiddenField js__profile-upload-btn"
+            />
             <div class="profile__preview js__profile-preview image__box"></div>
           </div>
-          
 
           <label for="email">Email</label>
           <input
@@ -89,7 +102,9 @@
             id="email"
             type="email"
             name="email"
+            required
           />
+          <small class="js-error-message">Completa campos obligatorios</small>
 
           <label for="telephone">Teléfono</label>
           <input
@@ -98,7 +113,9 @@
             id="telephone"
             type="number"
             name="telephone"
+            required
           />
+          <small class="js-error-message">Completa campos obligatorios</small>
 
           <label for="linkedin">Linkedin</label>
           <input
@@ -108,6 +125,7 @@
             type="text"
             name="linkedin"
           />
+          <small class="js-error-message">Completa campos obligatorios</small>
 
           <label for="github">Github</label>
           <input
@@ -117,6 +135,7 @@
             type="text"
             name="github"
           />
+          <small class="js-error-message">Completa campos obligatorios</small>
         </div>
       </fieldset>
 

@@ -12,7 +12,7 @@
   margin: 0;
 }
 .action__upload-btn {
-  display:flex;
+  display: flex;
   width: 140px;
   height: 30px;
   background-color: $color-tertiary;
@@ -40,7 +40,6 @@
   width: 30px;
   height: 30px;
   margin-left: 20px;
- 
 }
 .profile__image {
   width: 300px;
@@ -90,7 +89,6 @@
       input {
         width: 17px;
         height: 17px;
-     
       }
       .color-cold-1 {
         @include color-container-mobile;
@@ -179,14 +177,14 @@
       font-family: $primary-font;
       line-height: 30px;
     }
-    input::placeholder { 
+    input::placeholder {
       color: $pinkish-grey;
       padding-left: 9px;
     }
     .button__container {
       display: flex;
       .button__image {
-        display:flex;
+        display: flex;
         width: 140px;
         height: 30px;
         background-color: $color-tertiary;
@@ -229,4 +227,17 @@
       }
     }
   }
+}
+
+.js-error-message {
+  display: block;
+  color: red;
+}
+
+.js-error-message {
+  display: none;
+}
+
+.js-error-border {
+  border: 2px solid red !important;
 }
