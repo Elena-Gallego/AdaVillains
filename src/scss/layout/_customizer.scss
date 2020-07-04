@@ -230,8 +230,9 @@
 }
 
 .js-error-message {
-  display: block;
   color: red;
+  display: block;
+  padding-top: 2px;
 }
 
 .js-error-message {
@@ -239,5 +240,5 @@
 }
 
 .js-error-border {
-  border: 2px solid red !important;
+  border: 1px solid red !important;
 }
