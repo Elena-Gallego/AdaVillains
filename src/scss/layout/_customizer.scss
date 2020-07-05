@@ -71,7 +71,7 @@
     display: block;
   }
 
-  .fa-object-ungroup {
+  .fa-chevron-up {
     transform: rotate(-180deg);
   }
 }
@@ -80,6 +80,7 @@
   .form__title {
     display: flex;
     justify-content: space-between;
+    width: 600px;;
   }
 
   .h2 {
@@ -102,6 +103,7 @@
       font-family: $primary-font;
       color: $color-dark;
       text-transform: uppercase;
+      margin-top:22px;
     }
 
     .palette-1 {
