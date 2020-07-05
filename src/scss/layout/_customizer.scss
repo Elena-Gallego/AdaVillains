@@ -57,7 +57,6 @@
 // Colapsables
 .js-collapsible__trigger {
   cursor: pointer;
-  min-width: 320px;
 }
 
 .collapsible__content {
@@ -69,6 +68,8 @@
 
   .collapsable--open, .collapsible__content {
     display: block;
+
+
   }
 
   .fa-chevron-up {
@@ -77,10 +78,11 @@
 }
 // Formulario
 .form {
+  width: 100%;
   .form__title {
     display: flex;
     justify-content: space-between;
-    width: 600px;;
+    width: 100%;
   }
 
   .h2 {
@@ -89,6 +91,8 @@
     font-weight: 400;
     color: $color-dark;
     text-transform: uppercase;
+    width: 320px;
+   
     i {
       margin-right: 10px;
       color: $color-tertiary;
@@ -104,6 +108,8 @@
       color: $color-dark;
       text-transform: uppercase;
       margin-top:22px;
+      min-width: 320px;
+      max-width: 600px;
     }
 
     .palette-1 {
