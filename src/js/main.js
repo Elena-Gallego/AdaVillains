@@ -159,6 +159,7 @@ function validatePhone(phone) {
 
 //Validación Formulario-ANA
 //Para el telefono y el mail se puede utilizar el metodo test (expresiones regulares)
+//The nextElementSibling property returns the element immediately following the specified element, in the same tree level
 
 const username = document.querySelector("#name");
 const userjob = document.querySelector("#job");
