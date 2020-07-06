@@ -171,53 +171,51 @@ const usergithub = document.querySelector("#github");
 
 function userNameValidation() {
   if (username.value === null || username.value === "");
-  username.classList.add("js-errorborder");
+  username.classList.add("js-error-border");
   username.nextElementSibling.classList.add(".js-error-message"); 
-}
-  else {
-    if (username.value === null || username.value === "");
-  username.classList.remove("js-errorborder");
+} else {
+  if (username.value === null || username.value === "");
+  username.classList.remove("js-error-border");
   username.nextElementSibling.classList.remove(".js-error-message");
   }
 }
 
 function userJobValidation() {
-
-  if (userjob.value === null || username.value === "");
-  userjob.classList.add("js-errorborder");
+  if (userjob.value === "");
+  userjob.classList.add("js-error-border");
   userjob.nextElementSibling.classList.add(".js-error-message"); 
-}
-  else {
-    if (userjob.value === null || userjob.value === "");
-  userjob.classList.remove("js-errorborder");
+} else {
+  if (userjob.value === "");
+  userjob.classList.remove("js-error-border");
   userjob.nextElementSibling.classList.remove(".js-error-message");
   }
 }
 
 // /*if (userimage.value === null || username.value === "") {
- //   userimage.classList.add('js-border-input');
+ //   userimage.classList.add('js-error-border');
 // } else {
-//   userimage.classList.remove('js-border-input');
+//   userimage.classList.remove('js-error-border');
 // }*/
 
 
 function userEmailValidation() {
-  if (useremail.value === '' || !validateEmail(useremail.value)) {
+  if (useremail.value === ""|| !validateEmail(useremail.value)) {
     //!useremail.value.incluye('@')
-    useremail.classList.add("js-errorborder");
+    useremail.classList.add("js-error-border");
     useremail.nextElementSibling.classList.add('.js-error-message');
   } else {
-    useremail.classList.remove("js-errorborder");
+    useremail.classList.remove("js-error-border");
     useremail.nextElementSibling.classList.remove(".js-error-message");
   }
 }
+
 function userTelephoneValidation() {
-  if (usertelephone.value === '' || !validatePhone(usertelephone.value)) {
-    usertelephone.classList.add("js-errorborder");
-    usertelephone.nextElementSibling.classList.add('js-error-message');
+  if (usertelephone.value === "" || !validatePhone(usertelephone.value)) {
+    usertelephone.classList.add("js-error-border");
+    usertelephone.nextElementSibling.classList.add("js-error-message");
   } else {
-    usertelephone.classList.remove('js-border-input');
-    usertelephone.nextElementSibling.classList.remove('js-error-message');
+    usertelephone.classList.remove("js-error-border");
+    usertelephone.nextElementSibling.classList.remove("js-error-message");
   }
 }
 
@@ -233,21 +231,21 @@ function validatePhone(phone) {
 
 
 function userLinkedinValidation() {
-  if (userlinkedin.value === '') {
-    userlinkedin.classList.add("js-errorborder");
+  if (userlinkedin.value === "") {
+    userlinkedin.classList.add("js-error-border");
     userlinkedin.nextElementSibling.classList.add("js-error-message");
   } else {
-    userlinkedin.classList.remove('');
+    userlinkedin.classList.remove("js-error-border");
     userlinkedin.nextElementSibling.classList.remove("js-error-message");
   }
 }
 
 function UserGithubValidation() {
-  if (usergithub.value === '') {
-    usergithub.classList.add("js-errorborder");
+  if (usergithub.value === "") {
+    usergithub.classList.add("js-error-border");
     usergithub.nextElementSibling.classList.add("js-error-message");
   } else {
-    usergithub.classList.remove("js-errorborder");
+    usergithub.classList.remove("js-error-border");
     usergithub.nextElementSibling.classList.remove("js-error-message");
   }
 }
