@@ -59,7 +59,7 @@ fileField.addEventListener('change', getImage);
 const nameElement = document.querySelector('.js-input-name');
 const positionElement = document.querySelector('.js-input-job');
 const emailElement = document.querySelector('.js-input-email');
-const telephoneElement = document.querySelector('.js-input-telephone');
+const phoneElement = document.querySelector('.js-input-telephone');
 const linkedinElement = document.querySelector('.js-input-linkedin');
 const githubElement = document.querySelector('.js-input-github');
 
@@ -68,7 +68,7 @@ const githubElement = document.querySelector('.js-input-github');
 const name = document.querySelector('.js-card-name');
 const job = document.querySelector('.js-card-job');
 const email = document.querySelector('.js-icon-email');
-// const telephone = document.querySelector('.js-icon-telephone');
+// const phone = document.querySelector('.js-icon-telephone');
 const linkedin = document.querySelector('.js-icon-linkedin');
 const github = document.querySelector('.js-icon-github');
 const photo = document.querySelector('.js__profile-image');
@@ -81,7 +81,7 @@ function getInputValues() {
   userData.name = nameElement.value;
   userData.job = positionElement.value;
   userData.email = emailElement.value;
-  userData.telephone = telephoneElement.value;
+  userData.phone = phoneElement.value;
   userData.linkedin = linkedinElement.value;
   userData.github = githubElement.value;
   userData.photo = photo.style;
@@ -107,7 +107,7 @@ function result() {
 nameElement.addEventListener('keyup', result);
 positionElement.addEventListener('keyup', result);
 emailElement.addEventListener('keyup', result);
-telephoneElement.addEventListener('keyup', result);
+phoneElement.addEventListener('keyup', result);
 linkedinElement.addEventListener('keyup', result);
 githubElement.addEventListener('keyup', result);
 
@@ -119,13 +119,13 @@ const iconGithub = document.querySelector('.js-github');
 
 
 function showContactTelephone() {
-  if (telephoneElement.value.length !== 0) {
+  if (phoneElement.value.length !== 0) {
     iconTelephone.classList.remove('hidden');
   } else {
     iconTelephone.classList.add('hidden');
   }
 }
-telephoneElement.addEventListener('keyup', showContactTelephone);
+phoneElement.addEventListener('keyup', showContactTelephone);
 
 function showContactEmail() {
   if (emailElement.value.length !== 0) {
@@ -186,7 +186,7 @@ function resetForm() {
   nameElement.value = '';
   positionElement.value = '';
   emailElement.value = '';
-  telephoneElement.value = '';
+  phoneElement.value = '';
   linkedinElement.value = '';
   githubElement.value = '';
   photoPreviewElement.style = '';
