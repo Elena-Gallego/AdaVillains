@@ -38,7 +38,7 @@ function updateCard(obj) {
 console.log(email);
 
 function result() {
-  getInputValues();
+  getInputValues();0
   updateCard(userData);
 }
 
