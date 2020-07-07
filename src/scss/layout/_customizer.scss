@@ -6,10 +6,83 @@
   }
 }
 
+// Botón imagen
+.action {
+  text-align: center;
+  margin: 0;
+}
+.action__upload-btn {
+  display:flex;
+  width: 140px;
+  height: 30px;
+  background-color: $color-tertiary;
+  border-radius: 3px;
+  font-size: 14px;
+  font-family: $primary-font;
+  color: $color-light;
+  border: none;
+  align-items: center;
+  justify-content: center;
+}
+.action__hiddenField {
+  /* Ocultamos el input de tipo "file" porque no podemos 
+  darle los estilos que queremos */
+  display: none;
+}
+
+.profile {
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+.profile__image,
+.profile__preview {
+  width: 30px;
+  height: 30px;
+  margin-left: 20px;
+ 
+}
+.profile__image {
+  width: 100%;
+  height: 100%;
+  margin-left: 0;
+  background-size: cover;
+}
+
+.profile__preview {
+  margin-left: 15px;
+  background-size: cover;
+}
+
+// Colapsables
+.js-collapsible__trigger {
+  cursor: pointer;
+}
+
+.collapsible__content {
+  display: none;
+}
+
+// Colapsables abiertos
+.collapsable--open {
+
+  .collapsable--open, .collapsible__content {
+    display: block;
+
+
+  }
+
+  .fa-chevron-up {
+    transform: rotate(-180deg);
+  }
+}
+// Formulario
 .form {
+  width: 100%;
   .form__title {
     display: flex;
     justify-content: space-between;
+    width: 100%;
   }
 
   .h2 {
@@ -18,6 +91,8 @@
     font-weight: 400;
     color: $color-dark;
     text-transform: uppercase;
+    width: 320px;
+   
     i {
       margin-right: 10px;
       color: $color-tertiary;
@@ -32,6 +107,9 @@
       font-family: $primary-font;
       color: $color-dark;
       text-transform: uppercase;
+      margin-top:22px;
+      min-width: 320px;
+      max-width: 600px;
     }
 
     .palette-1 {
@@ -111,7 +189,7 @@
   &__fill {
     border: none;
     border-bottom: 1px solid $white-two;
-    padding-bottom: 30px;
+    padding-bottom: 10px;
     h2 {
       padding-top: 10px;
       padding-bottom: 10px;
@@ -122,7 +200,7 @@
       color: $color-primary;
       margin-top: 20px;
       margin-bottom: 10px;
-      display: inline-block;
+      display: block;
     }
     input {
       border: solid 1px $hospital-green;
@@ -160,6 +238,8 @@
   }
   &__share {
     border-bottom: 1px solid $white-two;
+    padding: 5.6px 12px 10px;
+
     h2 {
       padding-top: 10px;
       padding-bottom: 10px;

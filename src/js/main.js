@@ -1,30 +1,90 @@
 'use strict';
 
+// Botón de subir imagen
+const fr = new FileReader();
+const uploadBtn = document.querySelector('.js__profile-trigger');
+const fileField = document.querySelector('.js__profile-upload-btn');
+let profileImage = document.querySelector('.js__profile-image');
+const profilePreview = document.querySelector('.js__profile-preview');
+
+
+/**
+ * Recoge el archivo añadido al campo de tipo "file"
+ * y lo carga en nuestro objeto FileReader para que 
+ * lo convierta a algo con lo que podamos trabajar.
+ * Añade un listener al FR para que ejecute una función
+ * al tener los datos listos
+ * @param {evento} e 
+ */
+function getImage(e){
+  const myFile = e.currentTarget.files[0];
+  fr.addEventListener('load', writeImage);
+  fr.readAsDataURL(myFile);
+}
+
+
+/**
+ * Una vez tenemos los datos listos en el FR podemos
+ * trabajar con ellos ;)
+ */
+function writeImage() {
+  /* En la propiedad `result` de nuestro FR se almacena
+   * el resultado. Ese resultado de procesar el fichero que hemos cargado
+   * podemos pasarlo como background a la imagen de perfil y a la vista previa
+   * de nuestro componente.
+   */
+  profileImage.style.backgroundImage = `url(${fr.result})`;
+  profilePreview.style.backgroundImage = `url(${fr.result})`;
+}
+
+
+/**
+ * Genera un click automático en nuesto campo de tipo "file"
+ * que está oculto
+ */
+function fakeFileClick() {
+ fileField.click(); 
+}
+
+/**
+ * Añadimos los listeners necesarios:
+ * - al botón visible para generar el click automático
+ * - al campo oculto para cuando cambie su value
+ */
+uploadBtn.addEventListener('click', fakeFileClick);
+fileField.addEventListener('change', getImage);
+
+
 // Elemento de donde cogemos los datos
 const nameElement = document.querySelector('.js-input-name');
 const positionElement = document.querySelector('.js-input-job');
 const emailElement = document.querySelector('.js-input-email');
-const telephoneElement = document.querySelector('.js-input-telephone');
+const phoneElement = document.querySelector('.js-input-telephone');
 const linkedinElement = document.querySelector('.js-input-linkedin');
 const githubElement = document.querySelector('.js-input-github');
+
 
 // Elemento donde pintamos los datos
 const name = document.querySelector('.js-card-name');
 const job = document.querySelector('.js-card-job');
 const email = document.querySelector('.js-icon-email');
-// const telephone = document.querySelector('.js-icon-telephone');
+// const phone = document.querySelector('.js-icon-telephone');
 const linkedin = document.querySelector('.js-icon-linkedin');
 const github = document.querySelector('.js-icon-github');
+const photo = document.querySelector('.js__profile-image');
 
+
+// ---- OBJETO (REVISAR)
 // recogemos datos de los inputs
 const userData = {};
 function getInputValues() {
   userData.name = nameElement.value;
   userData.job = positionElement.value;
   userData.email = emailElement.value;
-  userData.telephone = telephoneElement.value;
+  userData.phone = phoneElement.value;
   userData.linkedin = linkedinElement.value;
   userData.github = githubElement.value;
+  userData.photo = photo.style;
 }
 
 // Elemento de donde pintamos los datos
@@ -47,7 +107,7 @@ function result() {
 nameElement.addEventListener('keyup', result);
 positionElement.addEventListener('keyup', result);
 emailElement.addEventListener('keyup', result);
-telephoneElement.addEventListener('keyup', result);
+phoneElement.addEventListener('keyup', result);
 linkedinElement.addEventListener('keyup', result);
 githubElement.addEventListener('keyup', result);
 
@@ -59,13 +119,13 @@ const iconGithub = document.querySelector('.js-github');
 
 
 function showContactTelephone() {
-  if (telephoneElement.value.length !== 0) {
+  if (phoneElement.value.length !== 0) {
     iconTelephone.classList.remove('hidden');
   } else {
     iconTelephone.classList.add('hidden');
   }
 }
-telephoneElement.addEventListener('keyup', showContactTelephone);
+phoneElement.addEventListener('keyup', showContactTelephone);
 
 function showContactEmail() {
   if (emailElement.value.length !== 0) {
@@ -94,7 +154,57 @@ function showContactGithub() {
 }
 githubElement.addEventListener('keyup', showContactGithub);
 
+// Colapsables
 
+
+const collapsibleTriggers = document.querySelectorAll('.js-collapsible__trigger');
+
+function updateCollapsible(event) {
+  const currentCollapsible = event.currentTarget.parentElement;
+
+  if (currentCollapsible.classList.contains('collapsable--open')) {
+    currentCollapsible.classList.remove('collapsable--open');
+  } else {
+    for (const item of collapsibleTriggers) {
+      item.parentElement.classList.remove('collapsable--open');
+    }
+    currentCollapsible.classList.add('collapsable--open');
+  } 
+}
+
+for (const item of collapsibleTriggers) {
+  item.addEventListener('click', updateCollapsible);
+}
+
+
+// Botón de reset
+const resetButton = document.querySelector('.js-button-reset');
+const photoPreviewElement = document.querySelector('.js__profile-preview');
+const contactList = document.querySelector('.js-contact__list');
+
+function resetForm() {
+  nameElement.value = '';
+  positionElement.value = '';
+  emailElement.value = '';
+  phoneElement.value = '';
+  linkedinElement.value = '';
+  githubElement.value = '';
+  photoPreviewElement.style = '';
+  photo.style = '';
+}
+
+function resetCard() {
+  name.innerHTML = 'Nombre Apellido';
+  job.innerHTML = 'Puesto de trabajo';
+  contactList.classList.add('hidden');
+}
+
+function resetData(){
+  resetForm();
+  resetCard();
+}
+
+resetButton.addEventListener('click', resetData);
 
 /*
 function addEmail () {
