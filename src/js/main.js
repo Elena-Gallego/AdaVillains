@@ -54,6 +54,38 @@ function fakeFileClick() {
 uploadBtn.addEventListener('click', fakeFileClick);
 fileField.addEventListener('change', getImage);
 
+// Paletas
+const inputsList = document.querySelectorAll('.js-palette');
+//const name = document.querySelector('.js-card-name');
+//const job = document.querySelector('.js-card-job');
+
+function addInputsListeners () {
+  for(const input of inputsList) {
+    input.addEventListener('change,addPaletteClass');
+  }
+}
+
+function addPaletteClass(evt) {
+  const inputValue = evt.currentTarget.value;
+  console.log(inputValue);
+  name.classList.remove('card__id_name');
+  name.classList.remove('card__id_name2');
+  name.classList.remove('card__id_name3');
+
+  if(inputValue === 'coldcolors') {
+    name.classList.add('card__id_name');
+  } else if(inputValue === 'warmcolors') {
+    name.classList.add('card__id_name2');
+  } else {
+    name.classList.add('card__id_name3');
+  }
+}
+
+addInputsListeners();
+
+//console.log(inputList);
+
+
 
 // Elemento de donde cogemos los datos
 const nameElement = document.querySelector('.js-input-name');
