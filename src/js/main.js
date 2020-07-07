@@ -43,7 +43,7 @@ function writeImage() {
  * que está oculto
  */
 function fakeFileClick() {
- fileField.click(); 
+  fileField.click();
 }
 
 /**
@@ -53,38 +53,6 @@ function fakeFileClick() {
  */
 uploadBtn.addEventListener('click', fakeFileClick);
 fileField.addEventListener('change', getImage);
-
-// Paletas
-const inputsList = document.querySelectorAll('.js-palette');
-//const name = document.querySelector('.js-card-name');
-//const job = document.querySelector('.js-card-job');
-
-function addInputsListeners () {
-  for(const input of inputsList) {
-    input.addEventListener('change,addPaletteClass');
-  }
-}
-
-function addPaletteClass(evt) {
-  const inputValue = evt.currentTarget.value;
-  console.log(inputValue);
-  name.classList.remove('card__id_name');
-  name.classList.remove('card__id_name2');
-  name.classList.remove('card__id_name3');
-
-  if(inputValue === 'coldcolors') {
-    name.classList.add('card__id_name');
-  } else if(inputValue === 'warmcolors') {
-    name.classList.add('card__id_name2');
-  } else {
-    name.classList.add('card__id_name3');
-  }
-}
-
-addInputsListeners();
-
-//console.log(inputList);
-
 
 
 // Elemento de donde cogemos los datos
@@ -104,6 +72,60 @@ const email = document.querySelector('.js-icon-email');
 const linkedin = document.querySelector('.js-icon-linkedin');
 const github = document.querySelector('.js-icon-github');
 const photo = document.querySelector('.js__profile-image');
+
+// Paletas
+const inputsList = document.querySelectorAll('.js-palette');
+const bar = document.querySelector('.card__id');
+const iconSm = document.querySelectorAll('.contact__icon');
+
+function addInputsListeners () {
+  for(const input of inputsList) {
+    input.addEventListener('change',addPaletteClass);
+  }
+}
+
+function addPaletteClass(evt) {
+  const inputValue = evt.currentTarget.value;
+  console.log(inputValue);
+  name.classList.remove('card__id_name');
+  name.classList.remove('card__id_name2');
+  name.classList.remove('card__id_name3');
+  bar.classList.remove('card__id');
+  bar.classList.remove('card__id2');
+  bar.classList.remove('card__id3');
+  for(const icon of iconSm) {
+    icon.classList.remove('contact__icon');
+    icon.classList.remove('contact__icon2');
+    icon.classList.remove('contact__icon3');
+  }
+
+
+  if(inputValue === 'coldcolors') {
+    name.classList.add('card__id_name');
+    bar.classList.add('card__id');
+    //iconSm.classList.add('contact__icon');
+    for(const icon of iconSm) {
+      icon.classList.add('contact__icon');
+    }
+  } else if(inputValue === 'warmcolors') {
+    name.classList.add('card__id_name2');
+    bar.classList.add('card__id2');
+    for(const icon of iconSm) {
+      icon.classList.add('contact__icon2');
+    }
+  } else {
+    name.classList.add('card__id_name3');
+    bar.classList.add('card__id3');
+    for(const icon of iconSm) {
+      icon.classList.add('contact__icon3');
+    }
+  }
+}
+
+addInputsListeners();
+
+//console.log(inputList);
+
 
 
 // ---- OBJETO (REVISAR)
@@ -201,7 +223,7 @@ function updateCollapsible(event) {
       item.parentElement.classList.remove('collapsable--open');
     }
     currentCollapsible.classList.add('collapsable--open');
-  } 
+  }
 }
 
 for (const item of collapsibleTriggers) {
