@@ -240,6 +240,44 @@
     border-bottom: 1px solid $white-two;
     padding: 5.6px 12px 10px;
 
+
+
+    .twitter {
+      padding-top: 20px;
+      border-top: 1px solid $white-two;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      .twitter-paragraph{
+        font-size: 18px;
+        font-weight: 400;
+        font-family: $primary-font;
+        color: $color-dark;
+        margin-bottom: 5px;
+      }
+      .twitter-url {
+        font-size: 12px;
+        font-weight: 400;
+        font-family: $primary-font;
+        color: $color-tertiary;
+        margin-bottom: 13px;
+      }
+      .twitter-button{
+        background-color: $azure;
+        color: $color-light;
+        width: 181px;
+        height: 30px;
+        font-size: 14px;
+        font-family: $primary-font;
+        margin-bottom: 30px;
+        border: inherit;
+        border-radius: 3px;
+      }
+    }
+    .hidden {
+      display: none;
+    } 
     h2 {
       padding-top: 10px;
       padding-bottom: 10px;

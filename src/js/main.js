@@ -141,7 +141,7 @@ function getInputValues() {
   userData.phone = phoneElement.value;
   userData.linkedin = linkedinElement.value;
   userData.github = githubElement.value;
-  userData.photo = photo.style;
+  userData.photo = fr.result;
 }
 
 // Elemento de donde pintamos los datos
@@ -265,6 +265,7 @@ resetButton.addEventListener('click', resetData);
 
 const buttonShare = document.querySelector('.js-button__share');
 
+// CREA TARJETA
 buttonShare.addEventListener('click', handlerClick);
 
 function handlerClick(event){
@@ -287,15 +288,29 @@ function sendRequest(objectData){
       'content-type': 'application/json'
     },
   })
-    .then(function(resp) { return resp.json();})
+  
+    .then(function(resp) { 
+      console.log(resp);
+      return resp.json();})
     .then(function(result) { showURL(result);})
     .catch(function(error) { console.log(error);});
 }
 
+const twitterContainer = document.querySelector('.js-twitter');
+const twitterButton = document.querySelector('.js-twitter-button');
+
 function showURL(result){
   if(result.success){
-    responseURL.innerHTML = '<a href=' + result.cardURL + '>' + result.cardURL + '</a>';
+    twitterContainer.classList.remove('hidden');
     
+    const tweet = '¡Mira mi tarjeta de visita de AdaVillana!';
+
+    responseURL.innerHTML = `${result.cardURL}<a href="${result.cardURL}" target="_blank" ></a>`;
+    twitterButton.setAttribute(
+      'href',
+      `https://twitter.com/intent/tweet?text=${tweet}&url=${result.cardURL}`
+    );
+
   }else{
     responseURL.innerHTML = 'ERROR:' + result.error;
   }
