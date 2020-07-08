@@ -77,6 +77,7 @@ const photo = document.querySelector('.js__profile-image');
 const inputsList = document.querySelectorAll('.js-palette');
 const bar = document.querySelector('.card__id');
 const iconSm = document.querySelectorAll('.contact__icon');
+const photoDefault = document.querySelector('.card__photo');
 
 function addInputsListeners () {
   for(const input of inputsList) {

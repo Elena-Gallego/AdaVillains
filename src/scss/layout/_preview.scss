@@ -61,7 +61,7 @@
   &__photo {
     width: 100%;
     height: 200px;
-    background-image: url('https://via.placeholder.com/300x300/cccccc/666666/?text=IMAGE');
+    background-image: url('../images/ursula.jpg');
     background-size: cover;
     background-position: center;
     border: 1px solid $hospital-green;
@@ -74,6 +74,24 @@
     display: flex;
     padding: 10px 20px;
   }
+}
+
+.card__photo2 {
+    width: 100%;
+    height: 200px;
+    background-image: url('https://via.placeholder.com/300x300/cccccc/666666/?text=IMAGE');
+    background-size: cover;
+    background-position: center;
+    border: 1px solid $hospital-green;
+}
+
+.card__photo3 {
+  width: 100%;
+  height: 200px;
+  background-image: url('https://via.placeholder.com/300x300/cccccc/666666/?text=IMAGE');
+  background-size: cover;
+  background-position: center;
+  border: 1px solid $hospital-green;
 }
 
 .card__id_name {
