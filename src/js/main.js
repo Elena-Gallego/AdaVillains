@@ -10,11 +10,11 @@ const profilePreview = document.querySelector('.js__profile-preview');
 
 /**
  * Recoge el archivo añadido al campo de tipo "file"
- * y lo carga en nuestro objeto FileReader para que 
+ * y lo carga en nuestro objeto FileReader para que
  * lo convierta a algo con lo que podamos trabajar.
  * Añade un listener al FR para que ejecute una función
  * al tener los datos listos
- * @param {evento} e 
+ * @param {evento} e
  */
 function getImage(e){
   const myFile = e.currentTarget.files[0];
@@ -96,6 +96,9 @@ function addPaletteClass(evt) {
   bar.classList.remove('card__id');
   bar.classList.remove('card__id2');
   bar.classList.remove('card__id3');
+  photoDefault.classList.remove('card__photo');
+  photoDefault.classList.remove('card__photo2');
+  photoDefault.classList.remove('card__photo3');
   for(const icon of iconSm) {
     icon.classList.remove('contact__icon');
     icon.classList.remove('contact__icon2');
@@ -106,6 +109,7 @@ function addPaletteClass(evt) {
   if(inputValue === 'coldcolors') {
     name.classList.add('card__id_name');
     bar.classList.add('card__id');
+    photoDefault.classList.add('card__photo');
     //iconSm.classList.add('contact__icon');
     for(const icon of iconSm) {
       icon.classList.add('contact__icon');
@@ -113,12 +117,14 @@ function addPaletteClass(evt) {
   } else if(inputValue === 'warmcolors') {
     name.classList.add('card__id_name2');
     bar.classList.add('card__id2');
+    photoDefault.classList.add('card__photo2');
     for(const icon of iconSm) {
       icon.classList.add('contact__icon2');
     }
   } else {
     name.classList.add('card__id_name3');
     bar.classList.add('card__id3');
+    photoDefault.classList.add('card__photo3');
     for(const icon of iconSm) {
       icon.classList.add('contact__icon3');
     }
@@ -155,7 +161,7 @@ function updateCard(obj) {
 console.log(email);
 
 function result() {
-  getInputValues();0
+  getInputValues();
   updateCard(userData);
 }
 
@@ -275,7 +281,7 @@ function handlerClick(event){
 
 // // MANDAR DATOS
 // function sendData(objectData){
- 
+
 //   sendRequest(userData);
 // }
 
@@ -288,8 +294,8 @@ function sendRequest(objectData){
       'content-type': 'application/json'
     },
   })
-  
-    .then(function(resp) { 
+
+    .then(function(resp) {
       console.log(resp);
       return resp.json();})
     .then(function(result) { showURL(result);})
@@ -301,7 +307,7 @@ const twitterButton = document.querySelector('.js-twitter-button');
 
 function showURL(result){
   if(result.success){
-    twitterContainer.classList.remove('hidden');   
+    twitterContainer.classList.remove('hidden');
     const tweet = '¡Mira mi tarjeta de visita de AdaVillana!';
 
     responseURL.innerHTML = `${result.cardURL}<a href="${result.cardURL}" target="_blank" ></a>`;
@@ -314,9 +320,6 @@ function showURL(result){
     responseURL.innerHTML = 'ERROR:' + result.error;
   }
 }
-
-
-
 
 
 
