@@ -301,8 +301,7 @@ const twitterButton = document.querySelector('.js-twitter-button');
 
 function showURL(result){
   if(result.success){
-    twitterContainer.classList.remove('hidden');
-    
+    twitterContainer.classList.remove('hidden');   
     const tweet = '¡Mira mi tarjeta de visita de AdaVillana!';
 
     responseURL.innerHTML = `${result.cardURL}<a href="${result.cardURL}" target="_blank" ></a>`;
