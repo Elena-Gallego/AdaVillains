@@ -72,6 +72,8 @@ const email = document.querySelector('.js-icon-email');
 const linkedin = document.querySelector('.js-icon-linkedin');
 const github = document.querySelector('.js-icon-github');
 const photo = document.querySelector('.js__profile-image');
+const responseURL = document.querySelector('.result-url');
+
 
 // Paletas
 const inputsList = document.querySelectorAll('.js-palette');
@@ -260,6 +262,40 @@ function resetData(){
 }
 
 resetButton.addEventListener('click', resetData);
+
+// FETCH
+function sendRequest(objectData){
+  fetch('https://us-central1-awesome-cards-cf6f0.cloudfunctions.net/card/', {
+    method: 'POST',
+    body: JSON.stringify(objectData),
+    headers: {
+      'content-type': 'application/json'
+    },
+  })
+    .then(function(resp) { return resp.json(); })
+    .then(function(result) { showURL(result); })
+    .catch(function(error) { console.log(error); });
+}
+
+
+
+function showURL(result){
+  if(result.success){
+    responseURL.innerHTML = '<a href=' + result.cardURL + '>' + result.cardURL + '</a>';
+    
+  }else{
+    responseURL.innerHTML = 'ERROR:' + result.error;
+  }
+}
+
+function handlerClick(){
+  sendRequest(userData);
+}
+
+const buttonShare = document.querySelector('.js-button__share');
+
+buttonShare.addEventListener('click', handlerClick);
+
 
 /*
 function addEmail () {
