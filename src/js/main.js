@@ -263,21 +263,34 @@ function resetData(){
 
 resetButton.addEventListener('click', resetData);
 
+const buttonShare = document.querySelector('.js-button__share');
+
+buttonShare.addEventListener('click', handlerClick);
+
+function handlerClick(event){
+  event.preventDefault(),
+  sendRequest(userData);
+}
+
+// // MANDAR DATOS
+// function sendData(objectData){
+ 
+//   sendRequest(userData);
+// }
+
 // FETCH
 function sendRequest(objectData){
-  fetch('https://us-central1-awesome-cards-cf6f0.cloudfunctions.net/card/', {
+  fetch('https://us-central1-awesome-cards-cf6f0.cloudfunctions.net/card/',{
     method: 'POST',
     body: JSON.stringify(objectData),
     headers: {
       'content-type': 'application/json'
     },
   })
-    .then(function(resp) { return resp.json(); })
-    .then(function(result) { showURL(result); })
-    .catch(function(error) { console.log(error); });
+    .then(function(resp) { return resp.json();})
+    .then(function(result) { showURL(result);})
+    .catch(function(error) { console.log(error);});
 }
-
-
 
 function showURL(result){
   if(result.success){
@@ -288,13 +301,9 @@ function showURL(result){
   }
 }
 
-function handlerClick(){
-  sendRequest(userData);
-}
 
-const buttonShare = document.querySelector('.js-button__share');
 
-buttonShare.addEventListener('click', handlerClick);
+
 
 
 /*
