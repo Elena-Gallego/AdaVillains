@@ -26,7 +26,7 @@ a {
             }
         }
         & p {
-            color: $color-primary;
+            color: $color-base;
             font-family: $primary-font;
             font-size: 12.8px;
             margin-bottom: 17.8px;
@@ -70,7 +70,7 @@ a {
             margin-bottom: 30px;
 
             border-radius: 21px;
-            background-color: $color-secondary;
+            background-color: $color-button;
 
             display: flex;
             justify-content: center;

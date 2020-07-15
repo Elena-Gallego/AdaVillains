@@ -72,7 +72,7 @@
 
   }
 
-  .fa-chevron-up {
+  .fa-chevron-down {
     transform: rotate(-180deg);
   }
 }
@@ -197,7 +197,7 @@
     label {
       font-size: 14px;
       font-family: $primary-font;
-      color: $color-primary;
+      color: $color-base;
       margin-top: 20px;
       margin-bottom: 10px;
       display: block;
