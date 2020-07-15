@@ -367,6 +367,7 @@ function resetForm() {
   githubElement.value = "";
   photoPreviewElement.style = "";
   photo.style = "";
+  palette.value = "1";
 }
 
 function resetCard() {
