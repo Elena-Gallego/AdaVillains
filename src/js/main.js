@@ -8,11 +8,8 @@ let userData = {
   linkedin: '',
   github: '',
   photo: '',
-  // userData.paletteCold = palette1Element.value;
-  // userData.palette2 = palette2Element.value;
-  // userData.palette3 = palette3Element.value;
   palette: '',
-}
+};
 
 // Botón de subir imagen
 const fr = new FileReader();
@@ -49,30 +46,19 @@ const phoneElement = document.querySelector('.js-input-telephone');
 const linkedinElement = document.querySelector('.js-input-linkedin');
 const githubElement = document.querySelector('.js-input-github');
 
-
 // Elementos donde pintamos los datos
 const name = document.querySelector('.js-card-name');
 const job = document.querySelector('.js-card-job');
 const email = document.querySelector('.js-icon-email');
-// const phone = document.querySelector('.js-icon-telephone');
 const linkedin = document.querySelector('.js-icon-linkedin');
 const github = document.querySelector('.js-icon-github');
-const photo = document.querySelector('.js__profile-image');
 const responseURL = document.querySelector('.result-url');
 
-
 // Paletas
-// const inputsList = document.querySelectorAll('.js-palette');
-// const palette = inputsList;
 const palette = document.querySelectorAll('.js-palette');
-
-
 const bar = document.querySelector('.card__id');
 const iconSm = document.querySelectorAll('.contact__icon');
 const photoDefault = document.querySelector('.card__photo');
-// const paletteCold = document.querySelector('#palette-1');
-// const paletteWarm = document.querySelector('#palette-2');
-// const paletteNeutral = document.querySelector('#palette-3');
 
 function addInputsListeners() {
   for (const input of palette) {
@@ -125,16 +111,11 @@ function addPaletteClass(evt) {
     }
     evt.currentTarget.classList.add('checked');
   }
-  // for (let input of palette){
-  //   input.addEventListener('change', result);
-  // }
 }
 
 addInputsListeners();
 
-//console.log(inputList);
-
-// ---- OBJETO (REVISAR)
+// ---- OBJETO
 // recogemos datos de los inputs
 userData = {};
 function getInputValues() {
@@ -145,9 +126,6 @@ function getInputValues() {
   userData.linkedin = linkedinElement.value;
   userData.github = githubElement.value;
   userData.photo = fr.result;
-  // userData.paletteCold = palette1Element.value;
-  // userData.palette2 = palette2Element.value;
-  // userData.palette3 = palette3Element.value;
 
   for (let item of palette){
     if (item.classList.contains('checked')){
@@ -155,18 +133,7 @@ function getInputValues() {
     }
   }
 
-  // userData.name.classList.add('card__id_name');
-  //   bar.classList.add('card__id');
-  //   photoDefault.classList.add('card__photo');
-  // CAMBIAR PALETTE
-
   setInLocalStorage();
-
-  // function localStorage(data){
-  //   userData.name.value = data.name
-
-  //   }
-  
 }
 
 function setInLocalStorage() {
@@ -174,22 +141,12 @@ function setInLocalStorage() {
   localStorage.setItem('photo', JSON.stringify(userData));
 }
 
-
 const localImage = localStorage.getItem('photo');
 if (localImage) {
   profileImage.style.backgroundImage = `url(${localImage})`;
   profilePreview.style.backgroundImage = `url(${localImage})`;
   userData.photo = localImage;
 }
-
-
-// function getFromLocalStorage(){
-//   const dataFromLS = JSON.parse(localStorage.getItem('data'))
-//   if (dataFromLS !== null){
-//     userData = dataFromLS
-//   } 
-// } 
-
 
 function getFromLocalStorage() {
   const savedInfo = JSON.parse(localStorage.getItem('data'));
@@ -201,13 +158,10 @@ function getFromLocalStorage() {
       phoneElement.value = savedInfo.phone || '';
       linkedinElement.value = savedInfo.linkedin || '';
       githubElement.value = savedInfo.github || '';
-    // profilePreview.style.backgroundImage =  `url(${dataUser.photo})`|| `url(./assets/images/p1.jpg)`;
-    // profileImage.style.backgroundImage =  `url(${dataUser.photo})` || `url(./assets/images/p1.jpg)`;
     }
   }
   uploadInfo();
 }
-
 
 
 // Elementos donde pintamos los datos
@@ -217,16 +171,12 @@ function updateCard(obj) {
   email.setAttribute('href', 'mailto:' + obj.email);
   linkedin.setAttribute('href', obj.linkedin);
   github.setAttribute('href', 'https://github.com/', obj.github);
-  // for(let item of palette){
-  //   item.setAttribute('value', obj.palette)
-  // }
 }
 
 function result() {
   getInputValues();
   updateCard(userData);
 }
-
 
 // Pintamos (cogemos los datos del input)
 nameElement.addEventListener('keyup', result);
@@ -238,7 +188,6 @@ githubElement.addEventListener('keyup', result);
 for (let item of palette){
   item.addEventListener('change', result);
 }
-
 
 //Mostrar iconos de contacto según se rellena el formulario
 const iconTelephone = document.querySelector('.js-telephone');
@@ -283,7 +232,6 @@ function showContactGithub() {
 githubElement.addEventListener('keyup', showContactGithub);
 
 // Colapsables
-
 const collapsibleTriggers = document.querySelectorAll(
   '.js-collapsible__trigger'
 );
@@ -319,14 +267,12 @@ function resetForm() {
   githubElement.value = '';
   profileImage.style.backgroundImage = 'url(../images/p1.jpg)';
   profilePreview.style.backgroundImage = 'url(../images/p1.jpg)';
-  
 }
 
 function resetCard() {
   name.innerHTML = 'Nombre Apellido';
   job.innerHTML = 'Puesto de trabajo';
   contactList.classList.add('hidden');
-
 }
 
 function resetData() {
@@ -339,18 +285,12 @@ resetButton.addEventListener('click', resetData);
 
 const buttonShare = document.querySelector('.js-button__share');
 
-// CREA TARJETA
+// CREAR TARJETA
 buttonShare.addEventListener('click', handlerClick);
 
 function handlerClick(event) {
   event.preventDefault(), sendRequest(userData);
 }
-
-// // MANDAR DATOS
-// function sendData(objectData){
-
-//   sendRequest(userData);
-// }
 
 // FETCH
 function sendRequest(objectData) {
@@ -372,7 +312,6 @@ function sendRequest(objectData) {
       console.log(error);
     });
 }
-
 
 const twitterContainer = document.querySelector('.js-twitter');
 const twitterButton = document.querySelector('.js-twitter-button');
