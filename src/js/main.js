@@ -48,9 +48,6 @@ const emailElement = document.querySelector('.js-input-email');
 const phoneElement = document.querySelector('.js-input-telephone');
 const linkedinElement = document.querySelector('.js-input-linkedin');
 const githubElement = document.querySelector('.js-input-github');
-// const palette1Element = document.querySelector('#palette-1');
-// const palette2Element = document.querySelector('#palette-2');
-// const palette3Element = document.querySelector('#palette-3');
 
 
 // Elementos donde pintamos los datos
@@ -110,6 +107,7 @@ function addPaletteClass(evt) {
     for (const icon of iconSm) {
       icon.classList.add('contact__icon');
     }
+    evt.currentTarget.classList.add('checked');
   } else if (paletteValue === '2') {
     name.classList.add('card__id_name2');
     bar.classList.add('card__id2');
@@ -117,6 +115,7 @@ function addPaletteClass(evt) {
     for (const icon of iconSm) {
       icon.classList.add('contact__icon2');
     }
+    evt.currentTarget.classList.add('checked');
   } else {
     name.classList.add('card__id_name3');
     bar.classList.add('card__id3');
@@ -124,6 +123,7 @@ function addPaletteClass(evt) {
     for (const icon of iconSm) {
       icon.classList.add('contact__icon3');
     }
+    evt.currentTarget.classList.add('checked');
   }
   // for (let input of palette){
   //   input.addEventListener('change', result);
@@ -150,7 +150,9 @@ function getInputValues() {
   // userData.palette3 = palette3Element.value;
 
   for (let item of palette){
-    userData.palette = item.value;
+    if (item.classList.contains('checked')){
+      userData.palette = item.value;
+    }
   }
 
   // userData.name.classList.add('card__id_name');
@@ -169,6 +171,7 @@ function getInputValues() {
 
 function setInLocalStorage() {
   localStorage.setItem('data', JSON.stringify(userData));
+  localStorage.setItem('photo', JSON.stringify(userData));
 }
 
 
@@ -232,9 +235,9 @@ emailElement.addEventListener('keyup', result);
 phoneElement.addEventListener('keyup', result);
 linkedinElement.addEventListener('keyup', result);
 githubElement.addEventListener('keyup', result);
-// paletteCold.addEventListener('keyup', result);
-// paletteWarm.addEventListener('keyup', result);
-// paletteNeutral.addEventListener('keyup', result);
+for (let item of palette){
+  item.addEventListener('change', result);
+}
 
 
 //Mostrar iconos de contacto según se rellena el formulario
@@ -329,7 +332,7 @@ function resetCard() {
 function resetData() {
   resetForm();
   resetCard();
-
+  setInLocalStorage();
 }
 
 resetButton.addEventListener('click', resetData);
